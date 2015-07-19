@@ -4,8 +4,10 @@ $(function() {
 
 //Define Base URL
  var baseUrl = "http://localhost:3000"; 
+//var baseUrl = "https://startupwdi.herokuapp.com";
+
 console.log(baseUrl);
-//  var baseUrl = "https://pickup-wdi.herokuapp.com" // PRD
+
 
 //Define the template
  $idea = _.template( $("#ideaTemplate").html() );
@@ -16,7 +18,7 @@ console.log(baseUrl);
 
 	 _.each(ideas, function(idea) {
       console.log("IDEA: "+idea)
-      $('#ideas').append($idea(idea))
+      $('#ideas').prepend($idea(idea))
     });
 
 });

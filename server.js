@@ -6,7 +6,7 @@ var express = require('express'),
     mongoose = require('mongoose');
 
 // Connect to database
-mongoose.connect('mongodb://localhost/startup');
+mongoose.connect(process.env.MONGOLAB_URI || 'mongodb://localhost/startup');
 var Idea = require('./models');
 console.log(Idea);
 
@@ -20,11 +20,11 @@ app.use(express.static(__dirname));
 
 // `ideas` array is our model (holds our data)
   // contains test (or "seed") data
-  var ideas = [
-    {company: "Shazam", market: "food", desc: "Imagine if you could take a photo of a dish, and the app would pull up the key info such as its history, nutritional info, and recipe"},
-    {company: "Shazam", market: "food", desc: "Imagine if you could take a photo of a dish, and the app would pull up the key info such as its history, nutritional info, and recipe"},
-    {company: "Shazam", market: "food", desc: "Imagine if you could take a photo of a dish, and the app would pull up the key info such as its history, nutritional info, and recipe"}
-  ];
+  // var ideas = [
+  //   {company: "Shazam", market: "food", desc: "Imagine if you could take a photo of a dish, and the app would pull up the key info such as its history, nutritional info, and recipe"},
+  //   {company: "Shazam", market: "food", desc: "Imagine if you could take a photo of a dish, and the app would pull up the key info such as its history, nutritional info, and recipe"},
+  //   {company: "Shazam", market: "food", desc: "Imagine if you could take a photo of a dish, and the app would pull up the key info such as its history, nutritional info, and recipe"}
+  // ];
 
 
 app.get('/', function(req, res) {
@@ -41,6 +41,20 @@ app.get('/api/ideas', function (req, res) {
   console.log("Ideas: "+ideas);
   res.json(ideas);
 	});
+});
+
+// IDEAS#CREATE
+app.post('/api/ideas', function(req, res) {
+  // SAVE LINE TO DB
+  var idea = new Idea({
+    company: req.body.company,
+    market: req.body.market,
+    desc: req.body.desc
+  });
+
+  idea.save(function(err, idea) {
+    res.json(idea);
+  });
 });
 
 

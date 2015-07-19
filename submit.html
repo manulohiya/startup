@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- bootstrap css -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+
+  <!-- custom styles -->
+  <link rel="stylesheet" type="text/css" href="submitstyles.css">
+
+  <title></title>
+</head>
+<body>
+  <h1>Post your idea to the Wall</h1> 
+  
+ 
+   
+
+<div class="container">
+<div class="col-md-12">
+    <div class="form-area">  
+        <form id = "new-idea" role="form">
+        <br style="clear:both">
+                    
+            <div class="form-group">
+            <input type="text" class="form-control" id="company" name="company" placeholder="What company's biz model does your idea resemble (e.g. Uber, Airbnb)" required>
+          </div>
+          <div class="form-group">
+            <input type="text" class="form-control" id="market" name="market" placeholder="What market segment does your idea primarily address (e.g. senior citizens, backpackers)" required>
+          </div>
+          
+          
+          <div class="form-group">
+            <textarea class="form-control" type="textarea" id="desc" placeholder="Briefly describe your idea as clearly as possible highlighting the key functionality of your idea" maxlength="140" rows="7"></textarea>
+              <span class="help-block"><p id="characterLeft" class="help-block ">You have reached the limit</p></span>                    
+          </div>
+            
+        <button type="button" id="submit" name="submit" class="btn btn-primary pull-right">Submit Form</button>
+        </form>
+    </div>
+</div>
+</div>
+
+
+  <!-- jquery -->
+  <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+
+  <!-- bootstrap js -->
+  <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+
+  <!-- underscore -->
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
+
+  <!-- custom script -->
+  <script type="text/javascript" src="submitscripts.js"></script>
+
+
+</body>
+</html>
