@@ -1,8 +1,8 @@
 $(document).ready(function(){ 
 
 //Define Base URL
- var baseUrl = "http://localhost:3000"; 
-//var baseUrl = "https://startupwdi.herokuapp.com";
+// var baseUrl = "http://localhost:3000"; 
+var baseUrl = "https://startupwdi.herokuapp.com";
 
 
 
