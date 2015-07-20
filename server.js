@@ -8,7 +8,7 @@ var express = require('express'),
 // Connect to database
 mongoose.connect(process.env.MONGOLAB_URI || process.env.MONGOHQ_URL || 'mongodb://localhost/startup');
 var Idea = require('./models');
-console.log("test: "  Idea);
+console.log(Idea);
 
 // OPEN THE API TO REQUESTS FROM ANY DOMAIN
 app.use(cors());
