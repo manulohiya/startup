@@ -8,7 +8,7 @@ var express = require('express'),
 // Connect to database
 mongoose.connect(process.env.MONGOLAB_URI || process.env.MONGOHQ_URL || 'mongodb://localhost/startup');
 var Idea = require('./models');
-console.log(Idea);
+console.log("test: "  Idea);
 
 // OPEN THE API TO REQUESTS FROM ANY DOMAIN
 app.use(cors());
@@ -16,15 +16,6 @@ app.use(cors());
 app.use(bodyParser.urlencoded({ extended: true }));
 
 app.use(express.static(__dirname+"/public"));
-
-
-// `ideas` array is our model (holds our data)
-  // contains test (or "seed") data
-  // var ideas = [
-  //   {company: "Shazam", market: "food", desc: "Imagine if you could take a photo of a dish, and the app would pull up the key info such as its history, nutritional info, and recipe"},
-  //   {company: "Shazam", market: "food", desc: "Imagine if you could take a photo of a dish, and the app would pull up the key info such as its history, nutritional info, and recipe"},
-  //   {company: "Shazam", market: "food", desc: "Imagine if you could take a photo of a dish, and the app would pull up the key info such as its history, nutritional info, and recipe"}
-  // ];
 
 
 app.get('/', function(req, res) {
@@ -59,6 +50,6 @@ app.post('/api/ideas', function(req, res) {
 
 
 // set server to localhost:3000
-app.listen(process.env.PORT || 3000, function () {
+app.listen(process.env.PORT, function () {
   console.log('server started on localhost:3000');
 });
