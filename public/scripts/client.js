@@ -3,8 +3,8 @@ $(function() {
   console.log('I\'m here to serve')
 
 //Define Base URL
- var baseUrl = "http://localhost:3000"; 
-//var baseUrl = "https://startupwdi.herokuapp.com";
+// var baseUrl = "http://localhost:3000"; 
+var baseUrl = "https://startupwdi.herokuapp.com";
 
  $( "#ideasscreen" ).fadeIn( "slow", function() {
     // Animation complete.
