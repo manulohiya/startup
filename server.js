@@ -6,7 +6,7 @@ var express = require('express'),
     mongoose = require('mongoose');
 
 // Connect to database
-mongoose.connect(process.env.MONGOLAB_URI || 'mongodb://localhost/startup');
+mongoose.connect(process.env.MONGOLAB_URI || process.env.MONGOHQ_URL || 'mongodb://localhost/startup');
 var Idea = require('./models');
 console.log(Idea);
 
