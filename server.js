@@ -15,7 +15,7 @@ app.use(cors());
 
 app.use(bodyParser.urlencoded({ extended: true }));
 
-app.use(express.static(__dirname));
+app.use(express.static(__dirname+"/public"));
 
 
 // `ideas` array is our model (holds our data)
@@ -28,7 +28,7 @@ app.use(express.static(__dirname));
 
 
 app.get('/', function(req, res) {
-  var index = __dirname + "/index.html";
+  var index = __dirname + '/public/views/index.html';
   res.sendFile(index);
 });
 

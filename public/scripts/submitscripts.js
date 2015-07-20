@@ -37,6 +37,11 @@ $(document).ready(function(){
      $.post(baseUrl+ '/api/ideas', idea, function(data) {
        console.log(data)
        // $('#ideas').prepend($line(data))
+       $( "#submitscreen" ).hide();
+          location.reload();
+          // Animation complete.
+        
+   
      })
 
    })

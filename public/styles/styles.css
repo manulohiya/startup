@@ -1,0 +1,135 @@
+body {
+  background-color: black;
+
+
+}
+ 
+
+
+h1 {
+  margin-left: 20px;
+  color: white;
+}
+
+div {
+  margin: 20px;
+}
+ 
+ul {
+  list-style-type: none;
+  color: white;
+  
+}
+ 
+h3 {
+  margin-top: 0px;
+  font: bold 20px/1.5 Helvetica, Verdana, sans-serif;
+  color: orange;
+}
+ 
+li img {
+  float: left;
+  margin: 0 15px 0 0;
+}
+ 
+li p {
+  font: 200 16px/1.5 Georgia, Times New Roman, serif;
+}
+ 
+li {
+  padding: 10px;
+  overflow: auto;
+}
+ 
+li:hover {
+  background: grey;
+  cursor: pointer;
+}
+
+
+/*Form Styling*/
+
+h2 {
+  text-align: center;
+  color: orange;
+
+}
+
+.red{
+    color:red;
+    }
+.form-area
+{
+  background-color: black;
+  /*padding: 10px 40px 60px;*/
+  margin: 10px 0px 60px;
+  /*border: 1px solid GREY;*/
+
+
+  }
+
+.form-control{
+  font-size: 20px;
+  height: 68px;
+  color: orange;
+  border-color: white;
+  background-color: black;
+  margin-top: 15px;
+  margin-bottom:15px; 
+}  
+
+
+.btn{
+font-size: 20px;
+
+}
+
+
+/*Play Screen*/
+
+h1 {
+  text-align: center;
+  vertical-align: middle;
+  font-family: helvetica;
+  color: white;
+  font-size: 100px;
+}
+
+.btn-round-lg{
+  border-radius: 22.5px;
+  margin-top: 30px;
+  width: 200px;
+    display: block;
+    margin-left: auto;
+    margin-right:  auto;
+    font-size: 30px;
+
+    text-align:center;
+  background-color: #336699;
+  color: white;
+  
+  border-color: white;
+  
+  
+}
+
+
+#industry {
+  color: red;
+
+}
+
+#company {
+  color: red;
+}
+
+#imagine {
+  margin-top: 100px;
+}
+
+.btn-round-lg:focus {
+    outline: none;
+}
+
+
+

@@ -8,29 +8,17 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
 
   <!-- custom styles -->
-  <link rel="stylesheet" type="text/css" href="styles.css">
+  <link rel="stylesheet" type="text/css" href="styles/play.css">
 
-  <title>World's largest collection of startup ideas</title>
+  <title>Get inspired!</title>
 </head>
 <body>
-  <h1>Bounce your ideas off the Wall</h1> 
-  <div class = "col-sm-12">
-  <ul id = "ideas">
-  </ul>
-</div>
-
-<script id = "ideaTemplate" type="text/template">
-<div class = "col-sm-12">
-  <ul id = "ideas">
-    <li>
-      <h3><%= company %> for <%=market%></h3>
-      <p><%= desc %> </p>
-    </li>
-       
-    
-  </ul>
-</div>
-</script>
+   <div class="col-xs-12">
+       <h1 id = "imagine">The world's</h1>
+       <h1 id = "company">largest</h1>
+       <h1 id = "butfor"> collection of </h1>
+       <h1 id = "industry">startup ideas</h1>
+      <button type="button" id = "newIdea" class="btn btn-primary btn-round-lg btn-lg">New Idea</button>
 
   <!-- jquery -->
   <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
@@ -42,7 +30,7 @@
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
 
   <!-- custom script -->
-  <script type="text/javascript" src="client.js"></script>
+  <script type="text/javascript" src="public/scripts/play.js"></script>
 
 
 </body>
