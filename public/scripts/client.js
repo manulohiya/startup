@@ -3,8 +3,8 @@ $(function() {
   console.log('I\'m here to serve')
 
 //Define Base URL
-// var baseUrl = "http://localhost:3000"; 
-var baseUrl = "https://startupwdi.herokuapp.com";
+ var baseUrl = "http://localhost:3000"; 
+//var baseUrl = "https://startupwdi.herokuapp.com";
 
  $( "#ideasscreen" ).fadeIn( "slow", function() {
     // Animation complete.
@@ -24,46 +24,74 @@ var baseUrl = "https://startupwdi.herokuapp.com";
     });
 
 });
+
+//Setup function to check user's login status
+function setupView() {
+	$.get('/api/users', function (data) {
+		if(data) {
+			console.log("User logged in")
+			globalUserData = data;
+			$('#navbar-guest').hide();
+			$('#navbar-loggedin').show();
+		} else {
+			console.log("User logged out")
+			$('#navbar-loggedin').hide();
+			$('#navbar-guest').show();			
+		}
+	});
+}  
   
+setupView();
 
 //Show the submit screen and hide everthing else
-	
 $( "#submitnav" ).click(function() {
-
-  $( "#submitscreen" ).fadeIn( "slow", function() {
-    $( "#ideasscreen" ).hide();
+	 $( "#ideasscreen" ).hide();
     $("#playscreen").hide();
     $("#loginscreen").hide();
     $("#aboutscreen").hide();
+  $( "#submitscreen" ).fadeIn( "slow", function() {
+   
     // Animation complete.
   	
   });
 });
 
 //Show the home screen
-	
 $( "#homenav" ).click(function() {
 	console.log("Clicking home screen");
  	location.reload();
  
   });
 
-//Show the login screen
+//Show the signup screen
 	
 $( "#signupnav" ).click(function() {
-	console.log("Clicking login screen");
+	console.log("Clicking signup nav");
 	$( "#ideasscreen" ).hide();
 	    $("#playscreen").hide();
 	    $("#submitscreen").hide();
 	    $("#aboutscreen").hide();
-	$( "#loginscreen" ).fadeIn( "fast", function() {
+	$( "#signupscreen" ).fadeIn( "fast", function() {
 	 	//animation complete
  	});
   });
 
+//Allow user to signout
+	
+$( "#signoutnav").click(function() {
+	console.log("Clicking signout button");
+	
+	 	//animation complete
+	 });
+
+ $("#ideas").click(function() {
+// 	event.preventDefault();
+ 	console.log("Clicking idea");
+ 	var id = $(this).attr("data-id");
+ 	console.log(id);
 
 
-
+});
 
 
 

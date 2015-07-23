@@ -4,8 +4,7 @@ $(document).ready(function(){
 // var baseUrl = "http://localhost:3000"; 
 var baseUrl = "https://startupwdi.herokuapp.com";
 
-
-
+//Logic to check for char limit on form
     $('#characterLeft').text('140 characters left');
     $('#desc').keydown(function () {
         var max = 140;
@@ -23,7 +22,7 @@ var baseUrl = "https://startupwdi.herokuapp.com";
         }
     });    
 
-
+//Logic to submit form
    $('#submit').click(function(e){
      
      e.preventDefault();
@@ -34,8 +33,8 @@ var baseUrl = "https://startupwdi.herokuapp.com";
        desc: $('#desc').val()
      }
      console.log(idea);
-     $.post(baseUrl+ '/api/ideas', idea, function(data) {
-       console.log(data)
+     $.post('/api/ideas', idea, function(data) {
+       console.log('got this far');
        // $('#ideas').prepend($line(data))
        $( "#submitscreen" ).hide();
           location.reload();
