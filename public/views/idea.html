@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- bootstrap css -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+
+  <!-- custom styles -->
+  <link rel="stylesheet" type="text/css" href="/styles/styles.css">
+
+  <title>Helpful Comments</title>
+</head>
+<body>
+
+
+<!-- Navbar for when user is not logged in -->
+<nav class="navbar navbar-default" id = "navbar-guest">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapsed-guest" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+     <!--  <a class="navbar-brand" href="#">Brand</a> -->
+    </div>
+
+    <!-- Nav-Bar -->
+    <div class="collapse navbar-collapse" id="navbar-collapsed-guest">
+      <ul class="nav navbar-nav">
+        <li id = "homenav"><a href="#">Home<span class="sr-only">(current)</span></a></li>
+        <li id = "submitnav"><a href="#">Give Feedback</a></li>
+        <!-- <li id = "playnav"><a href="#">Play</a></li>
+        <li id = "aboutnav"><a href="#">About</a></li>
+ -->
+      </ul>
+  
+      <ul class="nav navbar-nav navbar-right">
+        <li id = "idea-hunt"><a href="/">Back to Idea Hunt</a></li>
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+
+
+
+ 
+  
+
+
+<!-- Screen that allows user to post comment -->
+  <div hidden id = "submitscreen"> 
+
+    <div class="container">
+    <div class="col-md-12">
+    <h2>Post your comment</h2> 
+        <div class="form-area">  
+            <form id = "new-comment" role="form">
+            <br style="clear:both">
+                        
+                <div class="form-group">
+                <input type="text" class="form-control" id="author" name="author" placeholder="Please enter your name" required>
+              </div>
+              <!-- <div class="form-group">
+                <input type="text" class="form-control" id="market" name="market" placeholder="What market segment does your idea primarily address (e.g. senior citizens, backpackers)" required>
+              </div> -->
+              
+              
+              <div class="form-group">
+                <textarea class="form-control" type="textarea" id="desc" placeholder="Please provide helpful and actionable comment for this idea" maxlength="280" rows="7"></textarea>
+                  <span class="help-block"><p id="characterLeft" class="help-block ">You have reached the limit</p></span>                    
+              </div>
+                
+            <button type="button" id="submit" name="submit" class="btn btn-primary pull-right">Submit Feedback</button>
+            </form>
+        </div>
+    </div>
+  </div>
+
+  </div> 
+
+
+<!-- Screen that displays comments to screen -->
+  <div hidden id = "commentscreen">  
+
+  <div id = "headline" class = "col-sm-12"></div>
+
+   <div class = "col-sm-12">  </div>
+  <ul id = "comments">
+  </ul>
+</div>
+
+<script id = "commentTemplate" type="text/template">
+
+  <ul id = "comments">
+    <li>
+      
+      <h3><%= author %> suggests: </h3>
+      <p><%= desc %> </p>
+    
+    </li>
+  </ul>     
+    
+   
+
+</script>
+
+<script id = "headlineTemplate" type="text/template">
+<h2><%= company %> for <%= market %></h2>
+   <h4><%= desc %></h4>
+
+</script>   
+
+</div>
+
+
+
+  <!-- jquery -->
+  <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+
+  <!-- bootstrap js -->
+  <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+
+  <!-- underscore -->
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
+
+  <!-- custom script -->
+  <script type="text/javascript" src="/scripts/comment.js"></script>
+
+
+</body>
+</html>

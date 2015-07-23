@@ -1,9 +1,34 @@
-body {
-  background-color: black;
-
+body{
+  background-image:url('http://i.imgur.com/hHCWvYB.jpg'); 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  background-repeat: repeat;
 
 }
- 
+
+.navbar div {
+  margin: 0px;
+
+}
+
+.navbar-default .navbar-nav>li>a {
+  color: white;
+  
+}
+
+.nav>li>a:focus, .nav>li>a:hover {
+  color: orange;
+  
+}
+
+.container-fluid {
+  background-color: black;
+  opacity: 0.9;
+  border-color: black;
+  
+}
 
 
 h1 {
@@ -11,26 +36,33 @@ h1 {
   color: white;
 }
 
-div {
-  margin: 20px;
-}
- 
-ul {
-  list-style-type: none;
-  color: white;
-  
-}
- 
 h3 {
   margin-top: 0px;
   font: bold 20px/1.5 Helvetica, Verdana, sans-serif;
   color: orange;
 }
- 
-li img {
-  float: left;
-  margin: 0 15px 0 0;
+
+h4 {
+  text-align: center;
+  color: white;
+   font-style: italic;
 }
+
+div {
+  margin: 20px;
+}
+ 
+
+ul {
+  list-style-type: none;
+  color: white;
+    -webkit-padding-start: 0px;
+  
+}
+ 
+
+ 
+
  
 li p {
   font: 200 16px/1.5 Georgia, Times New Roman, serif;
@@ -39,11 +71,13 @@ li p {
 li {
   padding: 10px;
   overflow: auto;
+  margin-left: 0px;
 }
  
 li:hover {
-  background: grey;
+  /*background: grey;*/
   cursor: pointer;
+  border: 1px solid white;
 }
 
 
@@ -60,7 +94,7 @@ h2 {
     }
 .form-area
 {
-  background-color: black;
+  
   /*padding: 10px 40px 60px;*/
   margin: 10px 0px 60px;
   /*border: 1px solid GREY;*/
@@ -87,7 +121,7 @@ font-size: 20px;
 
 /*Play Screen*/
 
-h1 {
+/*h1 {
   text-align: center;
   vertical-align: middle;
   font-family: helvetica;
@@ -112,8 +146,8 @@ h1 {
   
   
 }
-
-
+*/
+/*
 #industry {
   color: red;
 
@@ -130,6 +164,7 @@ h1 {
 .btn-round-lg:focus {
     outline: none;
 }
+*/
 
 
 
