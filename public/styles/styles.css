@@ -102,15 +102,33 @@ h2 {
 
   }
 
-.form-control{
+.cmxform{
   font-size: 20px;
   height: 68px;
   color: orange;
   border-color: white;
-  background-color: black;
+  //background-color: black;
   margin-top: 15px;
   margin-bottom:15px; 
+  text-align: center;
 }  
+
+#email {
+ 
+  margin-top: 20px;
+}
+
+#email-error {
+  text-align: right;
+  color: red;
+   margin-left: 10px;
+}
+
+#password-error {
+  text-align: right;
+  color: red;
+   margin-left: 10px;
+}
 
 
 .btn{

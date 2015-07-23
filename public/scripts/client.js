@@ -76,6 +76,29 @@ $( "#signupnav" ).click(function() {
  	});
   });
 
+//Validate the user's email
+$("#signupform").validate({
+	rules: {
+		password: {
+			required: true,
+			minlength: 5
+		},
+		email: {
+			required: true,
+			email: true
+		}
+	},
+	messages: {
+		password: {
+			required: "Please provide a password.",
+			minlength: "Your password must be at least 5 characters long"
+			}
+		}
+
+
+	});
+
+
 //Allow user to signout
 	
 $( "#signoutnav").click(function() {
