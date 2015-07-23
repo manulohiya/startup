@@ -14,7 +14,7 @@ $(function() {
 //Define the template
  $idea = _.template( $("#ideaTemplate").html() );
 
-  $.get(baseUrl + '/api/ideas', function(data) {
+  $.get('/api/ideas', function(data) {
   	var ideas = data;
   	console.log("IDEAS: "+ideas);	
 

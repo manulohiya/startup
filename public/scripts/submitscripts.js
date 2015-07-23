@@ -1,8 +1,8 @@
 $(document).ready(function(){ 
 
 //Define Base URL
-// var baseUrl = "http://localhost:3000"; 
-var baseUrl = "https://startupwdi.herokuapp.com";
+var baseUrl = "http://localhost:3000"; 
+//var baseUrl = "https://startupwdi.herokuapp.com";
 
 //Logic to check for char limit on form
     $('#characterLeft').text('140 characters left');
