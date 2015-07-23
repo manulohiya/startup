@@ -8,25 +8,47 @@ body{
 
 }
 
+.navbar {
+   background:transparent;
+   color: white;
+   border-width: 0px;
+}
+
+#ideabody{
+background-image:url('http://i.imgur.com/61AyR7N.jpg'); 
+ /* -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  background-repeat: repeat;
+*/
+}
+
 .navbar div {
   margin: 0px;
-
+ color: white;
+  border-width: 0px;
+  
+  
 }
 
 .navbar-default .navbar-nav>li>a {
   color: white;
+  border-width: 0px;
   
 }
 
-.nav>li>a:focus, .nav>li>a:hover {
+.navbar>li>a:focus, .nav>li>a:hover {
   color: orange;
+  background-color: blue;
+  border-width: 0px;
   
 }
 
 .container-fluid {
-  background-color: black;
-  opacity: 0.9;
-  border-color: black;
+  background-color: transparent;
+  /*opacity: 0.4;*/
+  border-color: none;
   
 }
 
@@ -34,6 +56,12 @@ body{
 h1 {
   margin-left: 20px;
   color: white;
+}
+
+h2 {
+  text-align: center;
+  color: orange;  
+  margin-top: 0px;
 }
 
 h3 {
@@ -83,11 +111,7 @@ li:hover {
 
 /*Form Styling*/
 
-h2 {
-  text-align: center;
-  color: orange;
 
-}
 
 .red{
     color:red;

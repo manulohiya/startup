@@ -59,7 +59,7 @@ $( "#submitnav" ).click(function() {
 //Show the home screen
 $( "#homenav" ).click(function() {
 	console.log("Clicking home screen");
- 	location.reload();
+ //	location.reload();
  
   });
 
