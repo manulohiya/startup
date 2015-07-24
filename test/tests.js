@@ -50,3 +50,28 @@ describe('Idea Hunt', function() {
     });
   });
 });
+
+describe('Idea Hunt', function() {
+  it('The h2 header should include "Submit your idea!"', function(done) {
+    request(baseUrl, function(err, res, body) {
+      var $ = cheerio.load(body);
+      var title = $('#submitscreen h2').text();
+      expect(title).to.equal("Submit your idea!");
+      // expect(title).to.equal('Moogle');
+      done();
+    });
+  });
+});
+
+describe('Idea Hunt', function() {
+  it('The h2 header should include "Submit your idea!"', function(done) {
+    request(baseUrl, function(err, res, body) {
+      var $ = cheerio.load(body);
+      var title = $('#signupscreen h2').text();
+      expect(title).to.equal("Please Sign Up!");
+      // expect(title).to.equal('Moogle');
+      done();
+    });
+  });
+});
+
