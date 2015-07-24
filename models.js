@@ -1,32 +1,31 @@
 var mongoose = require('mongoose'),
-    Schema = mongoose.Schema,
-    bcrypt = require('bcrypt'),
-    salt = bcrypt.genSaltSync(10);
+Schema = mongoose.Schema,
+bcrypt = require('bcrypt'),
+salt = bcrypt.genSaltSync(10);
 
+//Comment Scema
 var commentSchema = new Schema({
   author: String,
   desc: String
-  // idea: {
-  //   type: Schema.Types.ObjectId,
-  //   ref: Idea
-  // },
 
 });
 
 var Comment = mongoose.model('Comment', commentSchema)
 
+//Idea Scema
 var ideaSchema = new Schema({ 
-    company: String,
-  	market: String,
-  	desc: String,
-    comments: [{
-      type: Schema.Types.ObjectId,
-      ref: "Comment" 
-    }] 
-   });
+  company: String,
+  market: String,
+  desc: String,
+  comments: [{
+    type: Schema.Types.ObjectId,
+    ref: "Comment" 
+  }] 
+});
 
 var Idea = mongoose.model('Idea', ideaSchema);
 
+//User Scema
 var userSchema = new Schema({
 	email: String,
 	passwordDigest: String
@@ -66,10 +65,10 @@ userSchema.statics.authenticate = function (email, password, callback) {
       throw new Error('Can\'t find user with email ' + email);
 
     // if found user, check if password is correct
-    } else if (user.checkPassword(password)) {
-      callback(null, user);
-    }
-  });
+  } else if (user.checkPassword(password)) {
+    callback(null, user);
+  }
+});
 };
 
 // compare password user enters with hashed password (`passwordDigest`)

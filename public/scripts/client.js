@@ -6,6 +6,7 @@ $(function() {
 var baseUrl = "http://localhost:3000"; 
 //var baseUrl = "https://startupwdi.herokuapp.com";
 
+//On page load, loads the empty ideas screen
 $( "#ideasscreen" ).fadeIn( "slow", function() {
     // Animation complete.
 });
@@ -14,6 +15,7 @@ $( "#ideasscreen" ).fadeIn( "slow", function() {
 //Define the template
 $idea = _.template( $("#ideaTemplate").html() );
 
+// Appends the list of ideas in DB onto the template 
 $.get('/api/ideas', function(data) {
 	var ideas = data;
 	console.log("IDEAS: "+ideas);	
@@ -43,6 +45,13 @@ function setupView() {
 
 setupView();
 
+//Show the home screen
+$( "#homenav" ).click(function() {
+	console.log("Clicking home screen");
+ 	location.reload();
+ 
+});
+
 //Show the submit screen and hide everthing else
 $( "#submitnav" ).click(function() {
 	$( "#ideasscreen" ).hide();
@@ -53,15 +62,10 @@ $( "#submitnav" ).click(function() {
 
     // Animation complete.
 
-});
+	});
 });
 
-//Show the home screen
-$( "#homenav" ).click(function() {
-	console.log("Clicking home screen");
- //	location.reload();
- 
-});
+
 
 //Show the Play screen
 $( "#playnav" ).click(function() {
@@ -108,7 +112,7 @@ $( "#signupnav" ).click(function() {
 	 });
 });
 
-//Validate the user's email
+//Validate the user's email on signup
 $("#signupform").validate({
 	rules: {
 		password: {
@@ -130,15 +134,36 @@ $("#signupform").validate({
 
 });
 
+//Validate the user's email on login
+$("#loginform").validate({
+	rules: {
+		password: {
+			required: true,
+			minlength: 5
+		},
+		email: {
+			required: true,
+			email: true
+		}
+	},
+	messages: {
+		password: {
+			required: "Please provide a password.",
+			minlength: "Your password must be at least 5 characters long"
+		}
+	}
+
+
+});
 
 //Allow user to signout
-
 $( "#signoutnav").click(function() {
 	console.log("Clicking signout button");
 	
 	 	//animation complete
 	 });
 
+//Allow user to click on ideas. Doesnt do anything
 $("#ideas").click(function() {
 // 	event.preventDefault();
 console.log("Clicking idea");

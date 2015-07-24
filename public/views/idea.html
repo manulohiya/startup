@@ -15,31 +15,31 @@
 <body id = "ideabody">
 
 
-<!-- Navbar for when user is not logged in -->
-<nav class="navbar navbar-default" id = "navbar-guest">
-  <div class="container-fluid">
-    <!-- Brand and toggle get grouped for better mobile display -->
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapsed-guest" aria-expanded="false">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-     <!--  <a class="navbar-brand" href="#">Brand</a> -->
-    </div>
+  <!-- Navbar for when user is not logged in -->
+  <nav class="navbar navbar-default" id = "navbar-guest">
+    <div class="container-fluid">
+      <!-- Brand and toggle get grouped for better mobile display -->
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapsed-guest" aria-expanded="false">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <!--  <a class="navbar-brand" href="#">Brand</a> -->
+      </div>
 
-    <!-- Nav-Bar -->
-    <div class="collapse navbar-collapse" id="navbar-collapsed-guest">
-      <ul class="nav navbar-nav">
-        <li id = "idea-hunt"><a href="/">Back to Idea Hunt<span class="sr-only">(current)</span></a></li>
+      <!-- Nav-Bar -->
+      <div class="collapse navbar-collapse" id="navbar-collapsed-guest">
+        <ul class="nav navbar-nav">
+          <li id = "idea-hunt"><a href="/">Back to Idea Hunt<span class="sr-only">(current)</span></a></li>
 
-        <li id = "submitnav"><a href="#">Give Feedback</a></li>
+          <li id = "submitnav"><a href="#">Give Feedback</a></li>
         <!-- <li id = "playnav"><a href="#">Play</a></li>
         <li id = "aboutnav"><a href="#">About</a></li>
- -->
-      </ul>
-  
+      -->
+    </ul>
+    
      <!--  <ul class="nav navbar-nav navbar-right">
         <li id = "idea-hunt"><a href="/">Back to Idea Hunt</a></li>
       </ul> -->
@@ -49,23 +49,23 @@
 
 
 
- 
-  
+
+
 
 
 <!-- Screen that allows user to post comment -->
-  <div hidden id = "submitscreen"> 
+<div hidden id = "submitscreen"> 
 
-    <div class="container">
+  <div class="container">
     <div class="col-md-12">
-    <h2>Post your comment</h2> 
-        <div class="form-area">  
-            <form id = "new-comment" role="form">
-            <br style="clear:both">
-                        
-                <div class="form-group">
-                <input type="text" class="form-control" id="author" name="author" placeholder="Please enter your name" required>
-              </div>
+      <h2>Post your comment</h2> 
+      <div class="form-area">  
+        <form id = "new-comment" role="form">
+          <br style="clear:both">
+          
+          <div class="form-group">
+            <input type="text" class="form-control" id="author" name="author" placeholder="Please enter your name" required>
+          </div>
               <!-- <div class="form-group">
                 <input type="text" class="form-control" id="market" name="market" placeholder="What market segment does your idea primarily address (e.g. senior citizens, backpackers)" required>
               </div> -->
@@ -73,50 +73,50 @@
               
               <div class="form-group">
                 <textarea class="form-control" type="textarea" id="desc" placeholder="Please provide helpful and actionable comment for this idea" maxlength="280" rows="7"></textarea>
-                  <span class="help-block"><p id="characterLeft" class="help-block ">You have reached the limit</p></span>                    
+                <span class="help-block"><p id="characterLeft" class="help-block ">You have reached the limit</p></span>                    
               </div>
-                
-            <button type="button" id="submit" name="submit" class="btn btn-primary pull-right">Submit Feedback</button>
+              
+              <button type="button" id="submit" name="submit" class="btn btn-primary pull-right">Submit Feedback</button>
             </form>
+          </div>
         </div>
+      </div>
+
+    </div> 
+
+
+    <!-- Screen that displays comments to screen -->
+    <div hidden id = "commentscreen">  
+
+      <div id = "headline" class = "col-sm-12"></div>
+
+      <div class = "col-sm-12">  </div>
+      <ul id = "comments">
+      </ul>
     </div>
-  </div>
 
-  </div> 
+    <script id = "commentTemplate" type="text/template">
 
-
-<!-- Screen that displays comments to screen -->
-  <div hidden id = "commentscreen">  
-
-  <div id = "headline" class = "col-sm-12"></div>
-
-   <div class = "col-sm-12">  </div>
-  <ul id = "comments">
-  </ul>
-</div>
-
-<script id = "commentTemplate" type="text/template">
-
-  <ul id = "comments">
-    <li>
+      <ul id = "comments">
+        <li>
+          
+          <h3><%= author %> suggests: </h3>
+          <p><%= desc %> </p>
+          
+        </li>
+      </ul>     
       
-      <h3><%= author %> suggests: </h3>
-      <p><%= desc %> </p>
-    
-    </li>
-  </ul>     
-    
-   
+      
 
-</script>
+    </script>
 
-<script id = "headlineTemplate" type="text/template">
-<h2><%= company %> for <%= market %></h2>
-   <h4><%= desc %></h4>
+    <script id = "headlineTemplate" type="text/template">
+      <h2><%= company %> for <%= market %></h2>
+      <h4><%= desc %></h4>
 
-</script>   
+    </script>   
 
-</div>
+  </div>
 
 
 

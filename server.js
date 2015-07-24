@@ -1,13 +1,13 @@
 var express = require('express'),
-    app = express(),
-    _ = require('underscore'),
-    cors = require('cors'),
-    bodyParser = require('body-parser'),
-    mongoose = require('mongoose'),
-    bcrypt = require('bcrypt'),
-    salt = bcrypt.genSaltSync(10),
-    session = require('express-session'),
-    db = require('./models');
+app = express(),
+_ = require('underscore'),
+cors = require('cors'),
+bodyParser = require('body-parser'),
+mongoose = require('mongoose'),
+bcrypt = require('bcrypt'),
+salt = bcrypt.genSaltSync(10),
+session = require('express-session'),
+db = require('./models');
 
 // Connect to database
 mongoose.connect(process.env.MONGOLAB_URI || process.env.MONGOHQ_URL || 'mongodb://localhost/startup');
@@ -49,18 +49,13 @@ app.use('/', function (req, res, next) {
     });
   };
 
- 
 
 
-app.get('/', function(req, res) {
-  var index = __dirname + '/public/views/index.html';
-  res.sendFile(index);
-});
-
-
-
-
-
+// render the main index.html
+  app.get('/', function(req, res) {
+    var index = __dirname + '/public/views/index.html';
+    res.sendFile(index);
+  });
 
 
 //Call for sessionID
@@ -80,10 +75,11 @@ app.get('/api/ideas', function (req, res) {
   
   //console.log(Idea);
   db.Idea.find(function(err, ideas){
-  console.log("Ideas: "+ideas);
-  res.json(ideas);
-	});
+    console.log("Ideas: "+ideas);
+    res.json(ideas);
+  });
 });
+
 
 // IDEAS#CREATE
 app.post('/api/ideas', function(req, res) {
@@ -100,22 +96,6 @@ app.post('/api/ideas', function(req, res) {
 });
 
 
-
-
-
-// // FEEDBACK#CREATE
-// app.post('/api/ideas/comment', function(req, res) {
-//   // SAVE LINE TO DB
-//   console.log("I am posting!");
-//   var comment = new db.Comment({
-//     author: req.body.author,    
-//     desc: req.body.desc
-//   });
-//   console.log(comment)
-//   comment.save(function(err, comment) {
-//     res.json(comment);
-//   });
-// });
 
 // Render comment page
 app.get('/ideas/:id', function(req, res) {
@@ -135,16 +115,16 @@ app.get('/api/ideas/comment', function (req, res) {
   });
 });
 
-// get all comment for one idea
+// get all comments for one idea
 app.get('/api/ideas/:id', function(req, res){
   // query the database to find the post indicated by the id
   var targetId = req.params.id;
   console.log("targetId: "+targetId);
   console.log("Getting comments")
   db.Idea
-    .find({_id: targetId})
-    .populate('comments')
-    .exec(function(err, idea) {
+  .find({_id: targetId})
+  .populate('comments')
+  .exec(function(err, idea) {
       // RETURN IDEA
       console.log("Executing");
       console.log(idea);
@@ -161,12 +141,12 @@ app.post('/api/ideas/:id/comments', function(req, res){
   console.log("Target Id:" +targetId);
   // create a new comment record
   console.log(req.body.author);
-    var newComment = new db.Comment({
-      author:req.body.author,
-      desc:req.body.desc
-    });
-    newComment.save();
-    
+  var newComment = new db.Comment({
+    author:req.body.author,
+    desc:req.body.desc
+  });
+  newComment.save();
+
    // console.log("GUYS THE ID is" + x);
   // query the database to find the post indicated by the id
   db.Idea.findOne({_id:targetId}, function(err, idea){
@@ -178,21 +158,9 @@ app.post('/api/ideas/:id/comments', function(req, res){
     foundIdea.save(function (err, savedUser) {
       res.json(savedUser);
     });
-    //save the new comment
-    //   db.Idea.save(function(err, comment){
-    //   console.log("line 169, got here");
-    //   idea.comments.push(comment);
-    //   console.log("got past line 170");
-    //   console.log(idea);
-    //  // db.Idea.save(function(err,comment){;
-    //   // send the new comment as the JSON response
-    //   // res.json(comment);
-    //   // });
-    // });
-  });
+ 
 });
-
-
+});
 
 
 // user submits the signup form
@@ -225,20 +193,20 @@ app.post('/api/login', function (req, res) {
   db.User.authenticate(email, password, function (err, user) {
     req.login(user);
  //   res.send(user);
-   res.redirect('/');
-  });
+ res.redirect('/');
+});
 });
 
 
 // destroy `session.userId` to log out user
-  req.logout = function () {
-    console.log("Logging out");
-    req.session.userId = null;
-    req.user = null;
+req.logout = function () {
+  console.log("Logging out");
+  req.session.userId = null;
+  req.user = null;
 
-  };
+};
 
-    next();
+next();
 });
 
 // log out user (destroy session)

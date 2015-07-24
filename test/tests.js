@@ -29,6 +29,7 @@ describe('Idea Hunt', function() {
   })
 });
 
+//Test 2 - GET Route
 describe('Idea page', function() {
   it('should have a HTTP of 200 - success', function(done) {
     request('http://localhost:3000/ideas/55b151ab5032814c6df00017', function(err, res, body) {
@@ -39,6 +40,7 @@ describe('Idea page', function() {
   });
 });
 
+//Test 3 - checking for text within document
 describe('Idea Hunt', function() {
   it('The title header should include "The Product Hunt for Ideas"', function(done) {
     request(baseUrl, function(err, res, body) {
@@ -51,6 +53,7 @@ describe('Idea Hunt', function() {
   });
 });
 
+//Test 4 - checking for text within document
 describe('Idea Hunt', function() {
   it('The h2 header should include "Submit your idea!"', function(done) {
     request(baseUrl, function(err, res, body) {
@@ -63,6 +66,7 @@ describe('Idea Hunt', function() {
   });
 });
 
+//Test 5 - checking for text within document
 describe('Idea Hunt', function() {
   it('The h2 header should include "Submit your idea!"', function(done) {
     request(baseUrl, function(err, res, body) {
