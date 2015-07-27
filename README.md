@@ -40,6 +40,15 @@ In order to run locally, this app requires the following node modules
 
 ###Find it here: [http://startupwdi.herokuapp.com/](http://startupwdi.herokuapp.com/)
 
+###Known issues
+To reproduce:
+User, if logged in, currently is unable to navigate to any of the tabs on the homepage.
+* Sign up with a new user
+* Try to navigate to any of the tabs
+
+Reason: Its because the ID names for each of the tabs are the same. When the event handler is triggered, currently it finds the first ID match which is on the Logged out state. 
+
+Potential Solution: Change IDs to something unique and add them both to the eventhandler 
 
 
 --------------------

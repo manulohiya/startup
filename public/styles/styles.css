@@ -38,7 +38,7 @@ body{
   
 }
 
-.navbar>li>a:focus, .nav>li>a:hover {
+.navbar-defaut>li>a:focus, .navbar-default>li>a:hover {
   color: orange;
   background-color: blue;
   border-width: 0px;
@@ -131,7 +131,7 @@ li:hover {
 }
 .form-area
 {
-  
+
   /*padding: 10px 40px 60px;*/
   margin: 10px 0px 60px;
   /*border: 1px solid GREY;*/
@@ -151,7 +151,7 @@ li:hover {
 }  
 
 #email {
- 
+
   margin-top: 20px;
 }
 

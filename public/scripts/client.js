@@ -101,7 +101,7 @@ $( "#aboutnav" ).click(function() {
 
 //Show the signup screen
 
-$( "#signupnav" ).click(function() {
+$( "#signupnav").click(function() {
 	console.log("Clicking signup nav");
 	$( "#ideasscreen" ).hide();
 	$("#playscreen").hide();
