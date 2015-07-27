@@ -10,7 +10,7 @@
   "author": "Manu Lohiya",
   "license": "MIT",
   "dependencies": {
-    "bcrypt": "^0.8.3",
+    "bcrypt": "^0.8.4",
     "body-parser": "^1.13.2",
     "chai": "^3.2.0",
     "cheerio": "^0.19.0",
