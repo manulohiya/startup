@@ -65,6 +65,20 @@ $( "#submitnav" ).click(function() {
 	});
 });
 
+//Show the submit screen and hide everthing else after logged in
+$( "#submitnav2" ).click(function() { 
+	console.log("it worked");
+	$( "#ideasscreen2" ).hide();
+	$("#playscreen2").hide();
+	$("#loginscreen2").hide();
+	$("#aboutscreen2").hide();
+	$( "#submitscreen2" ).fadeIn( "slow", function()
+{
+
+    // Animation complete.
+
+	});
+});
 
 
 //Show the Play screen
